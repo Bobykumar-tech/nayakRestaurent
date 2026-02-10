@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="/styling/search.css">
+</head>
+<body>
+    <%- include('navbarSearch.ejs') %>
+   
+    <div id="card">
+        
+    
+     <div id="card1">
+            <div id="photo">
+            <img src="<%= Data.image %>" alt="" class="img">
+            </div>
+            <div id="detail">
+                <div ><p class="details">Name:</p><p><%=Data.customer  %></p></div>
+                <div ><p class="details">Phone No:</p><p><%=Data.phone  %></p></div>
+                <div ><p class="details">Gmail:</p><p><%=Data.gmail  %></p></div>
+                <div ><p class="details">Address:</p><p><%=Data.address  %></p></div>
+                <div ><p class="details">Adhar:</p><p><%=Data.adhar %></p></div>
+            </div>
+
+        </div>
+
+          <table class="table hide2">
+        
+        <tr>
+            <th>Date</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+        </tr>
+        <% let Total = 0; %>
+        <% for( let index = 0; index < Tefeen.length; index++ ) 
+        { %>
+            
+        <tr>
+            <td><%= Tefeen[index].Date %></td>
+            <td><%= Tefeen[index].Quantity %></td>
+            <td><%= Tefeen[index].Amount %></td>
+        </tr>
+             <% 
+              Total = Total + Tefeen[index].Quantity ;
+
+              %>
+        <% } %>
+        <tr>
+            <th>Total </th>
+            <td><%= Total %></td>
+            <td><%= Total*50 %></td>
+        </tr>
+    </table>
+
+     <table class="table2 hide3">
+        
+        <tr>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Remainder Amount</th>
+        </tr>
+        <% let Totalamount = 0; %>
+        <% let Totalpay = 0; %>
+        
+        <% for( let index = 0; index < Tefeen.length; index++ ) { %>
+               <% 
+              Totalamount = Totalamount + Tefeen[index].Amount ;
+
+              %>
+
+
+        <% } %>
+
+          
+       
+        <% for( let index = 0; index < Pay.length; index++ ) 
+        { %>
+             <% for( let i = 0; i < index+1; i++ ) { %>
+               <% 
+              Totalpay = Totalpay + Pay[i].Amount ;
+
+              %>
+
+
+        <% } %>
+            
+        <tr>
+            <td><%= Pay[index].Date %></td>
+            <td><%= Pay[index].Amount %></td>
+            <td><%= Totalamount-Totalpay %></td>
+            <%  Totalpay = 0; %>
+        </tr>
+            
+        <% } %>
+    </table>
+        </div>
+        
+</body>
+</html>

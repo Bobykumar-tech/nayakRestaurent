@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin authentication</title>
+    <link rel="stylesheet" href="/styling/admin.css">
+</head>
+<body>
+    <%- include('navbarAdmin.ejs') %>
+
+
+
+          <div class="Formbox hide2">
+        <form action="/admin1" method="post" >
+            <label for="Date">Date</label>
+            <input type="date" id="Date" name="Date" required ><br>
+            <label for="Quantity">Quantity</label>
+            <input type="number" id="Quantity" name="Quantity" required ><br>
+            <label for="customer">Customer Name</label>
+            <input type="text" id="customer" name="customer" required><br>
+            <input type="submit" value="Save" id="submit">
+
+        </form>
+    </div>
+
+     <div class="Paymbox hide3">
+        <form action="/admin2" method="post" >
+            <label for="Date">Date</label>
+            <input type="date" id="Date" name="Date" required ><br>
+            <label for="Amount">Amount</label>
+            <input type="number" id="Amount" name="Amount" required ><br>
+            <label for="customer">Customer Name</label>
+            <input type="text" id="customer" name="customer" required><br>
+            <input type="submit" value="Pay" id="submit">
+
+        </form>
+    </div>
+    <div id="body">
+      <% for( let index = 0; index <  len; index++ ) { %>
+    <div class="card" id="card">
+
+        <div id="card1">
+            <div id="photo">
+            <img src="<%= Data[index].image %>" alt="" class="img">
+            </div>
+            <div id="detail">
+                <div ><p class="details">Name:</p><p><%=Data[index].customer  %></p></div>
+                <div ><p class="details">Phone No:</p><p><%=Data[index].phone  %></p></div>
+                <div ><p class="details">Gmail:</p><p><%=Data[index].gmail  %></p></div>
+                <div ><p class="details">Address:</p><p><%=Data[index].address  %></p></div>
+                <div ><p class="details">Adhar:</p><p><%=Data[index].adhar  %></p></div>
+            </div>
+
+        </div>
+
+    </div>
+     <% } %>
+     </div>
+
+    <script>
+        document.getElementById("newCus").addEventListener("click",()=>{
+        document.querySelector(".formdata").classList.remove("hide1");
+     });
+    </script>
+</body>
+</html>

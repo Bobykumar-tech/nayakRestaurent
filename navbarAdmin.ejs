@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <link rel="stylesheet" href="/styling/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+</head>
+<body>
+        <div id="index">
+        <div id="index1">
+        <div id="home1">Restaurent</div> 
+        <button id="navicon"><i class="fa-solid fa-bars"></i></button>
+         </div>
+        
+            <form action="/search" method="post" id="form">
+                <input type=" text" id="Customer" name="Customer" placeholder="Search" required>
+                <button type="submit" id="save"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        
+       
+        <div class="nav hide">
+        <a href="home"  class="sign" >Home</a>
+       <button id="tefeen" class="sign">Tefeen</button>
+       <button id="amount" class="sign">Payment</button>
+        <a href="/newCus" class="sign">newCus</a>
+        <a href="/about"class="sign">About us</a>
+        </div>
+    </div>
+     <script >
+     document.getElementById("navicon").addEventListener("click",()=>{
+        document.querySelector(".nav").classList.remove("hide");
+     });
+       document.getElementById("tefeen").addEventListener("click",()=>{
+        document.querySelector(".Paymbox").classList.add("hide3");
+        document.querySelector(".Formbox").classList.remove("hide2");
+        
+     });
+      document.getElementById("amount").addEventListener("click",()=>{
+        document.querySelector(".Formbox").classList.add("hide2");
+        document.querySelector(".Paymbox").classList.remove("hide3");
+     });
+
+    </script>
+</body>
+</html>

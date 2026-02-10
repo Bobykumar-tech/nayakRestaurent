@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurent management system</title>
+    <link rel="stylesheet" href="/styling/main.css">
+</head>
+<body>
+   <%- include('navbar.ejs') %>
+   <div id="formdetail">
+   <form action="/admin3" method="post" class="adminform" >
+            <label for="customer">Admin Name</label>
+            <input type="text" id="customer" name="customer" required><br>
+             <label for="passward">Passward</label>
+            <input type="text" id="passward" name="passward" required><br>
+            <input type="submit" value="Admin" id="submit">
+
+        </form>
+        </div>
+
+   
+</body>
+</html>

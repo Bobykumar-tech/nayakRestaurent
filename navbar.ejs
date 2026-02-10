@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <link rel="stylesheet" href="/styling/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+</head>
+<body>
+        <div id="index">
+        <div id="index1">
+        <div id="home1">RestaurentManagement</div> 
+        <button id="navicon"><i class="fa-solid fa-bars"></i></button>
+        </div>
+        <div class="nav hide">
+        <a href=""  class="sign" >Home</a>
+        <a href="" class="sign">Sign Up</a>
+        <a href="" class="sign">Sign In</a>
+        <a href=""class="sign">About us</a>
+        </div>
+    </div>
+     <script >
+     document.getElementById("navicon").addEventListener("click",()=>{
+        document.querySelector(".nav").classList.remove("hide");
+     });
+    </script>
+</body>
+</html>
