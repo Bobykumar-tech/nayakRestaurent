@@ -1,0 +1,53 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: #BAC095;
+}
+
+#formdetail{
+    height: 90vh;
+    width: 100%;
+    margin-top: 30vh;
+    align-items: center;
+}
+.adminform{
+    height: 30%;
+    width: 30%;
+    font-size: 20px;
+   background-color: #636B2F;  
+   
+    display: flex;
+    color:white;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 35%;
+    padding: 15px;
+    border-radius: 10px;
+
+}
+input{
+    height: 20px;
+    padding: 3px;
+    width: 100%;
+    outline: none;
+    margin-top: 8px;
+    border: 1px solid black;
+    text-transform: capitalize;
+    border-radius: 5px;
+}
+#submit{
+    height: 35px;
+    font-size: 20px;
+    width: 25%;
+    margin-left: 37%;
+    margin-top: 15px;
+    color: aliceblue;
+     background-color:#3a3e29 ;
+     border: none;
+    
+
+}
